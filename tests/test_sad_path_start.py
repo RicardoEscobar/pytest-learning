@@ -1,11 +1,13 @@
 import pytest
 
+import code.data_processor as data_processor
+
 # from scripts import data_processor
 
 
 @pytest.fixture(scope="function")
 def city_list_location_malformed():
-    return 'tests/resources/cities/malformed_map.csv'
+    return "tests/resources/cities/malformed_map.csv"
 
 
 def test_csv_reader_malformed_data_contents(city_list_location_malformed):
@@ -15,5 +17,6 @@ def test_csv_reader_malformed_data_contents(city_list_location_malformed):
     We will need to wrap the following line
     in the exceptions context manager:
     """
-    # data_processor.csv_reader(city_list_location_malformed)
-    pass
+    with pytest.raises(ValueError) as exp:
+        data_processor.csv_reader(city_list_location_malformed)
+    assert str(exp.value) == "could not convert string to float: 'not_an_altitude'"
