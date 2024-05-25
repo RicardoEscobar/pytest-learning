@@ -1,4 +1,5 @@
 """This module contains the Point class unit tests."""
+
 from code.point import Point
 import pytest
 
@@ -14,6 +15,14 @@ def test_invalid_point_generation():
     with pytest.raises(ValueError) as exp:
         Point("Buenos Aires", 14.716677, -555.467686)
     assert str(exp.value) == "Invalid latitude or longitude"
+
+
+def test_invalid_city_name():
+    """Test the creation of a Point object with an invalid city name."""
+    with pytest.raises(ValueError) as exp:
+        Point(1, 14.716677, -55.467686)
+    assert str(exp.value) == "Invalid city name. Must be a string and not of type: <class 'int'>"
+
 
 if __name__ == "__main__":
     pytest.main()
