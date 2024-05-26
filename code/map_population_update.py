@@ -1,3 +1,7 @@
+from typing import List, Dict, Union
+
+
+
 class MapData:
     def __init__(self, data, updated):
         self._data = data
@@ -27,7 +31,7 @@ class MapData:
                 return False
         return True
 
-    def add_population(self, pop_map):
+    def add_population(self, pop_map: Dict[str, Union[int, None]]):
         """
         If the data has not been updated, this function cross-references
         a dictionary containing countries and their respective populations.
