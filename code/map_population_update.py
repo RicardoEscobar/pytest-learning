@@ -1,4 +1,4 @@
-class MapData():
+class MapData:
     def __init__(self, data, updated):
         self._data = data
         if updated:  # if this value is True
@@ -7,14 +7,12 @@ class MapData():
             else:
                 self._updated = False
 
-
     def get_data(self):
         """
         Returns:
         list: Data object that is a list of dictionaries
         """
         return self._data
-
 
     def updated_population_count(self):
         """
@@ -25,10 +23,9 @@ class MapData():
         boolean: Check whether the list has been updated (true) or not (false)
         """
         for row in self._data:
-            if 'Population' not in row.keys() or 'Updated' not in row.keys():
+            if "Population" not in row.keys() or "Updated" not in row.keys():
                 return False
         return True
-
 
     def add_population(self, pop_map):
         """
@@ -46,10 +43,10 @@ class MapData():
         """
         if not self.updated_population_count():
             for row in self._data:
-                if row['Country'] in pop_map.keys():
-                    row['Population'] = pop_map[row['Country']]
+                if row["Country"] in pop_map.keys():
+                    row["Population"] = pop_map[row["Country"]]
                 else:
-                    row['Population'] = None
-                row['Updated'] = True
+                    row["Population"] = None
+                row["Updated"] = True
         else:
-            raise Exception('You cannot transform the data twice')
+            raise Exception("You cannot transform the data twice")

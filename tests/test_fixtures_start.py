@@ -2,8 +2,10 @@
 This module contains tests for the data_processor and map_population_update
 modules.
 """
+
 import code.data_processor as data_processor
 import code.map_population_update as map_population_update
+
 
 import pytest
 
