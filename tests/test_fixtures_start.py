@@ -1,5 +1,5 @@
 import pytest
-from scripts import data_processor, map_population_update
+from code import data_processor, map_population_update
 
 
 def test_data_population_update():
