@@ -1,6 +1,6 @@
 import pytest
 
-import code.data_processor as data_processor
+import src.data_processor as data_processor
 
 # from scripts import data_processor
 

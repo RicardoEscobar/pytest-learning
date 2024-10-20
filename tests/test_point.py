@@ -1,6 +1,6 @@
 """This module contains the Point class unit tests."""
 
-from code.point import Point
+from src.point import Point
 import pytest
 
 
