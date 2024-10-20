@@ -11,7 +11,7 @@ import pytest
 
 @pytest.fixture(scope="session")
 def map_data_location():
-    yield "tests/resources/cities/clean_map.csv"
+    return "tests/resources/cities/clean_map.csv"
 
 
 @pytest.fixture(scope="function")
