@@ -46,8 +46,9 @@ def test_file_path(dir_path, process_data):
         pass
 
     # Test the file path raises an error if the file is not found.
-    with pytest.raises(FileNotFoundError):
+    with pytest.raises(FileNotFoundError) as error:
         process_data("file_not_found.txt")
+    assert str(error.value) == "File file_not_found.txt not found."
 
 
 if __name__ == "__main__":
